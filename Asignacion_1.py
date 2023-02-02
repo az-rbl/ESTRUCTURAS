@@ -14,5 +14,8 @@ def random_list(size, begin=0, end=1000):
     return lista
 
 if __name__=="__main__":
-    print(random_list(20))
+    ri=input("Inicio rango ")
+    rf=input("Fin rango ")
+    nu = input("Numeros a generar ")
+    print(random_list(int(nu), int(ri), int(rf)))
     
