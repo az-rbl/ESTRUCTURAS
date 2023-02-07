@@ -1,4 +1,4 @@
-55#Modulo que contiene la funcion para generar una lista con valores aleatorios
+#Modulo que contiene la funcion para generar una lista con valores aleatorios
 import Asignacion_1 as r
 import timeit
 
