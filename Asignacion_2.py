@@ -22,7 +22,7 @@ def burbuja(lista):
         
         
 if __name__=="__main__":
-    l=r.random_list(50000)
+    l=r.random_list(500)
     #print(l)
     inicio = datetime.now()
     b = burbuja(l)
