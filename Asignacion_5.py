@@ -14,7 +14,7 @@ def particion(lista,p,r):
     while(True):
         while((lista[j]<= x)==False):
             j -=1
-        while((lista[i]>=x)==False):
+        while((lista[i]>x)==False and i<r-1):
             i +=1
         if i < j:
             temp =lista[i]
@@ -29,10 +29,11 @@ def quicksort(lista:list, p =0, r = None):
         q=particion(lista, p,r)
         quicksort(lista,p,q)
         quicksort(lista, q+1, r)
+    #print(lista)
     return(lista)
             
 if __name__=="__main__":
-    l=r.random_list(10)
+    l=r.random_list(50)
     print(l)
     t_0 = timeit.default_timer()
     b = quicksort(l)
