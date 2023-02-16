@@ -5,6 +5,7 @@ import Asignacion_1 as r
 import Asignacion_5 as qs
 import Asignacion_6 as sc
 import burbuja_s as bb
+import threading
 
 size = [50, 100, 500]
 ls = []
@@ -14,6 +15,7 @@ for s in size:
     ts = 0
     tq = 0
     tb = 0
+    threading.stack_size(2**26)
     for i in range(5):
         #print("Calculando sacudida")
         l=r.random_list(s)
