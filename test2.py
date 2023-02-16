@@ -4,39 +4,44 @@ import timeit
 import Asignacion_4 as bi
 import secuencial as sc
 import secuencial_s as ss
-import burbuja_s as bb
+import pandas as pd
 
-size = [50, 100, 500]
-ls = []
-lq = []
-lb =[]
+import random
+size = [50, 100, 500, 1000, 5000, 10000, 20000, 50000, 100000, 200000]
+lsc = []
+lss = []
+lbi =[]
 for s in size:
-    ts = 0
-    tq = 0
-    tb = 0
+    tsc = 0
+    tss = 0
+    tbi = 0
     for i in range(5):
         #print("Calculando sacudida")
         l=[range(s)]
         n = random.randint(0,s)
         t0s = timeit.default_timer()
-        a =sc.sacudida(l)
+        a =sc.secuencial(l,n)
         t1s = timeit.default_timer()
-        ts +=(t1s-t0s)
+        tsc +=(t1s-t0s)
         #print("Calculando quicksort")
         t0q = timeit.default_timer()
-        b =qs.quicksort(l)
+        b =ss.secuencial(l,n)
         t1q = timeit.default_timer()
-        tq +=(t1q-t0q)
+        tss +=(t1q-t0q)
         #print("Calculando burbuja")
         t0b = timeit.default_timer()
-        c =bb.burbuja(l)
+        c =bi.binario(l,n)
         t1b = timeit.default_timer()
-        tb +=(t1b-t0b)
+        tbi +=(t1b-t0b)
     #print("calculando promedios")
-    ps = ts/5
-    ls.append(ps)
-    lq.append(tq/5)
-    lb.append(tb/5)
-print(ls,lq,lb)
+
+    lsc.append(tsc/5)
+    lss.append(tss/5)
+    lbi.append(tbi/5)
+    df = pd.DataFrame({'secuencial':lsc,
+                     'sentinela': lss,
+                     'binario':lbi})
+
+df.to_csv('file.csv', index=False)
 
 
