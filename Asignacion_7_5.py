@@ -1,4 +1,5 @@
-#interpolacion.py
+#Asignación 7_5.py
+#Raúl badillo Lora
 #Programa que busca un numero en una lista utilizanod el algoritmo de interpolación
 
 #Fimcopm que encuentra al numero, recibe como argumentos una lista de numeros y el valor a buscar

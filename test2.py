@@ -5,7 +5,7 @@ import Asignacion_4 as bi
 import secuencial as sc
 import secuencial_s as ss
 import pandas as pd
-import interpolacion as ip
+import Asignacion_7_5 as ip
 
 import random
 size = [50, 100, 500, 1000, 5000, 10000, 20000, 50000, 100000, 200000]
