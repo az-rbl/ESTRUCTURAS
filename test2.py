@@ -6,6 +6,7 @@ import secuencial as sc
 import secuencial_s as ss
 import pandas as pd
 import Asignacion_7_5 as ip
+from matplotlib import pyplot as plt
 
 import random
 size = [50, 100, 500, 1000, 5000, 10000, 20000, 50000, 100000, 200000]
@@ -46,11 +47,15 @@ for s in size:
     lss.append(tss/5)
     lbi.append(tbi/5)
     lip.append(tip/5)
-    df = pd.DataFrame({'secuencial':lsc,
+    df = pd.DataFrame({
+                    'secuencial':lsc,
                      'sentinela': lss,
                      'binario':lbi,
                      'interpolacion':lip})
+plt.plot(size,df)
+plt.ylabel("Tiempo")
 
+plt.show()
 df.to_csv('file.csv', index=False)
 
 
